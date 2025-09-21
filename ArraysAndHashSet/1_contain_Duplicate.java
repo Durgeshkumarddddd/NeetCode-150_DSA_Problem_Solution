@@ -36,6 +36,7 @@ class findDuplicate {
         int arr[] = { 1, 6, 4, 3, 1 };
 
         boolean result = findDuplicate(arr);
+        System.out.println("Contains duplicate: " + result);
 
     }
 }
