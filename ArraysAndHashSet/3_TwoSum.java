@@ -13,17 +13,37 @@
  * Third approach is to use HashMap to store the element and its index and check if target - element is present in map then return indices. 
  * Time complexity is O(n) and space complexity is O(n).   
  * 
- */
+ 
+ Second method is commented.
+    Using second approach first sort and then use two pointer technique.
+    sort the array and take two pointers one at start and other at end.
+     
+
+ */ 
+
+
 
 class TwoSum {
     public static int[] twoSum(int arr[], int target) {
         java.util.HashMap<Integer, Integer> map = new java.util.HashMap<>();
-
+        // for (int i = 0; i < arr.length; i++) {
+        //     int complement = target - arr[i];
+        //     if (map.containsKey(complement)) {
+        //         return new int[] { map.get(complement), i };
+        //     }
+        //     map.put(arr[i], i);
+        // }
         for (int i = 0; i < arr.length; i++) {
-            
+            int complement = target - arr[i];
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
+            }
+            map.put(arr[i], i);
         }
-        
+        return new int[] { -1, -1 }; // return -1 if no solution found
+
     }
+
     public static void main(String[] arga) {
         int arr[] = { 2, 7, 11, 15 };
         int target = 9;
