@@ -1,10 +1,11 @@
 import java.util.List;
-import java.util.HashMap;
+import java.util.Map;
+import java.util.*;
 import java.util.ArrayList;
 class GroupAnagram {
 
     public static List<List<String>> groupAnagramsSort(String[] strs) {
-        HashMap<String, List<String>> map = new HashMap<>();
+        Map<String, List<String>> map = new HashMap<>();
 
         for (String str : strs) {
             char[] charArray = str.toCharArray();
@@ -22,7 +23,11 @@ class GroupAnagram {
         // List<List<String>> result = new ArrayList<>();
         // for (List<String> group : map.values()) {
         //     result.add(group);
-        
+        List<List<String>> resultAnagram = new ArrayList<>();
+        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+            resultAnagram.add(entry.getValue());
+        }
+
         
     }
     
