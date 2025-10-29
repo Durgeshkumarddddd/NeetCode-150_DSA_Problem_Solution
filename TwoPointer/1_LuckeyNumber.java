@@ -7,7 +7,7 @@ class LuckeyNumber {
     static boolean isLucky(int num) {
         int sum = 0;
         List<Integer> digit = new ArrayList<>();
-
+        
         while (num > 0) {
             digit.add(0, num % 10); // insert at index 0 to maintain order
             num /= 10;
